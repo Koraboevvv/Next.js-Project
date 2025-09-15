@@ -10,7 +10,7 @@ const ProductImage:FC<{title: string, image: string, id: number}> = (props) => {
     <div>
       <Image
         src={"https://api.errorchi.uz/product/image/" + image}
-        width={300}
+        width={350}
         alt={title}
         height={300}
         onClick={()=> router.push(`/product/${id}`)}
