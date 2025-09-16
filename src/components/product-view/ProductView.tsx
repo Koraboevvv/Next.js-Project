@@ -8,7 +8,7 @@ const ProductView: FC<{ data: any[] }> = ({ data }) => {
       {data?.map((item: any) => (
         <div
           key={item.id}
-          className="bg-white border-0 rounded-[10px] shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+          className="bg-white border-0 rounded-[10px] shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer h-[400px]"
         >
           <ProductImage
             title={item.title}

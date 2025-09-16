@@ -3,9 +3,9 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FC, memo } from "react";
 
-const ProductImage:FC<{title: string, image: string, id: number}> = (props) => {
-    const {title, image, id} = props
-    const router = useRouter()
+const ProductImage: FC<{ title: string, image: string, id: number }> = (props) => {
+  const { title, image, id } = props
+  const router = useRouter()
   return (
     <div>
       <Image
@@ -13,7 +13,8 @@ const ProductImage:FC<{title: string, image: string, id: number}> = (props) => {
         width={350}
         alt={title}
         height={300}
-        onClick={()=> router.push(`/product/${id}`)}
+        className="w-full h-[300px] object-cover rounded-lg"
+         onClick={() => router.push(`/product/${id}`)}
       />
     </div>
   );
