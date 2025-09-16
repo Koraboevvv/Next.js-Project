@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-gray-300 py-12 mt-12 ">
+    <footer className="bg-blue-900 text-gray-300 py-12 mt-12 ">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 ">
         <div>
           <h2 className="text-2xl font-bold text-white mb-4">Loggoo</h2>
