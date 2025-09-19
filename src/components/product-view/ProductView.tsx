@@ -7,7 +7,7 @@ import { Rate } from 'antd';
 const ProductView: FC<{ data: any[] }> = ({ data }) => {
   return (
     <div className="p-4 ">
-      <h1 className="font-black text-[48px] text-center mt-[72px] mb-[55px]">NEW ARRIVALS</h1>
+      <h2 className="font-black text-[48px] text-center mt-[72px] mb-[55px]">NEW ARRIVALS</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {data?.map((item: any) => {
