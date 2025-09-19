@@ -4,10 +4,9 @@ import { memo, ReactNode } from "react";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="Layout">
       <Header />
-      <main className="flex-grow">{children}</main>
-
+      {children}
       <Footer />
     </div>
   );
