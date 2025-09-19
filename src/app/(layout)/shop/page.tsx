@@ -1,11 +1,11 @@
 import { memo } from 'react';
 
-const About = () => {
+const Shop = () => {
   return (
     <div className="Page">
-      <h2>About Page</h2>
+      <h2>Shop Page</h2>
     </div>
   );
 };
 
-export default memo(About);
+export default memo(Shop);

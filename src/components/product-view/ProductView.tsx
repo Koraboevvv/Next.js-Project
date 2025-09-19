@@ -1,32 +1,41 @@
 import { FC, memo } from 'react';
 import ProductImage from './ProductImage';
 
-
 const ProductView: FC<{ data: any[] }> = ({ data }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
-      {data?.map((item: any) => (
-        <div
-          key={item.id}
-          className="bg-white border-0 rounded-[10px] shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer h-[400px]"
-        >
-          <ProductImage
-            title={item.title}
-            image={item.images[0]}
-            id={item.id}
-          />
+      {data?.map((item: any) => {
+        const price = item.price;
+        const oldPrice = Math.round(price / 0.7);
+        const discount = Math.round(((oldPrice - price) / oldPrice) * 100);
 
-          <div className="p-4 ">
-            <h3 className="text-lg font-semibold text-gray-800 truncate">
-              {item.title}
-            </h3>
-            <hr />
-            <strong className="text-lg font-semibold text-gray-800 truncate">
-              Price: {item.price}
-            </strong>
+        return (
+          <div
+            key={item.id}
+            className="bg-white border-0 rounded-[10px] shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer h-[400px]"
+          >
+            <ProductImage
+              title={item.title}
+              image={item.images[0]}
+              id={item.id}
+            />
+
+            <div className="p-4">
+              <h3 className="text-lg font-semibold text-gray-800 truncate">
+                {item.title}
+              </h3>
+              <hr />
+              <div className="flex items-center space-x-2">
+                <span className="text-lg font-bold text-black">${price}</span>
+                <span className="text-gray-400 line-through">${oldPrice}</span>
+                <span className="bg-red-100 text-red-500 text-xs font-semibold px-2 py-0.5 rounded-full ">
+                  -{discount}%
+                </span>
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
